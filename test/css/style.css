@@ -5,7 +5,7 @@
   font-size: 14px;
 }
 .header{
-  font-weight:100;
+  font-weight:300;
   padding: 20px 0;
 }
 .headerTime{
@@ -32,20 +32,24 @@
 .contentActive{
   background-color: #e1ecf4;
   border-left: 3px solid #699ecc;
-  font-size: 10px;
+  font-size: 8px;
+  padding-left: 2px;
 }
 .firsthalf, .secondhalf{ 
   height: 50%;
 }
-.firsthalf time{
-  font-size: 16px;
+.firsthalf .time{
+  font-size: 14px;
 }
-.secondhalf time{
-  font-size: 12px;
+.secondhalf .time{
+  font-size: 11px;
 }
 .firstOne{
   height:fit-content;
   padding-bottom: 5px;
+}
+.travelWork{
+  margin-bottom: 5px;
 }
 .codeReview{
   margin-top: 10px;

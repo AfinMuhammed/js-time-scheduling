@@ -25,9 +25,7 @@
 }
 .timeContent{
   width: 100%;
-  /* height: 75px; */
   margin-left: 15px;
-  /* margin-bottom: 10px; */
 }
 .contentActive{
   background-color: #e1ecf4;
@@ -55,8 +53,7 @@
   margin-top: 10px;
 }
 .withDesigner{
-  margin-top: 15px;
-  /* height: 20px; */
+  margin-top: 13px;
 }
 .null{
   margin-bottom: 8px;

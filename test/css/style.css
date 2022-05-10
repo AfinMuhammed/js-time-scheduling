@@ -16,7 +16,7 @@
 .TimeSection{
   border-top: 1px solid rgb(0,0,0,0.05);
   padding: 0 50px 0 30px;
-  height: 63px;
+  height: 60px;
 }
 .TimeSection .time{
   opacity: 0.6;

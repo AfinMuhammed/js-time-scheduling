@@ -1,151 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Test</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container header">
-      <span class="h5 pe-1">Time Schedule</span>
-      <span class="headerTime">8:00 am - 6:00 pm</span>
-    </div>
-    <div class="main container">
-      <!--8:00 - 8:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">8:00</span>
-          <div class="timeContent contentActive firstOne">
+
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container header">
+    <span class="h5 pe-1">Time Schedule</span>
+    <span class="headerTime">8:00 am - 6:00 pm</span>
+  </div>
+  <div class="main container">
+    <!--8:00 - 8:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">8:00</span>
+        <div class="timeContent">
+          <div class=" contentActive firstOne">
             Exercise
           </div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">8:30</span>
-          <div class="timeContent contentActive planDay mt-1 w-50">
-            Plan day
-          </div>
-          <div class="timeContent contentActive ms-0 travelWork w-50">
-            Travel to work
+          <div class=" d-block h-33"></div>
+          <div class="d-flex  h-16">
+            <div class=" w-50"></div>
+            <div class="contentActive w-50 ms-0"></div>
           </div>
         </div>
       </div>
-      <!--9:00 - 9:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">9:00</span>
-          <div class="timeContent contentActive firstOne">
+      <div class="secondhalf d-flex">
+        <span class="time">8:30</span>
+        <div class="timeContent contentActive planDay h-100 w-50">
+          Plan day
+        </div>
+        <div class="timeContent contentActive ms-0 travelWork w-50">
+          Travel to work
+        </div>
+      </div>
+    </div>
+    <!--9:00 - 9:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">9:00</span>
+        <div class="timeContent">
+          <div class="contentActive firstOne">
             Review Yesterday's commits
           </div>
+          <div class="firstOne"></div>
         </div>
-        <div class="secondhalf d-flex">
-          <span class="time">9:30</span>
-          <div class="timeContent contentActive codeReview firstOne">
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">9:30</span>
+        <div class="timeContent">
+          <div class="h-33"></div>
+          <div class=" contentActive codeReview firstOne">
             Code review
           </div>
         </div>
       </div>
-      <!--10:00 - 10:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">10:00</span>
-          <div class="timeContent"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">10:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--11:00 - 11:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">11:00</span>
-          <div class="timeContent contentActive">Have lunch with John</div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">11:30</span>
-          <div class="timeContent contentActive"></div>
-        </div>
-      </div>
-      <!--12:00 - 12:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">12:00</span>
-          <div class="timeContent contentActive"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">12:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--1:00 - 1:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">1:00</span>
-          <div class="timeContent"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">1:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--2:00 - 2:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">2:00</span>
-          <div class="timeContent withDesigner contentActive w-50">Follow up with Designer</div>
-          <div class="timeContent contentActive ms-0 w-50 skypeCall">skype call</div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">2:30</span>
-          <div class="timeContent contentActive null w-50"></div>
-          <div class="timeContent contentActive ms-0 w-50 pushup">Push up branch</div>
-        </div>
-      </div>
-      <!--3:00 - 3:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">3:00</span>
-          <div class="timeContent withDesigner w-50"></div>
-          <div class="timeContent contentActive ms-0 w-50 branchBalance"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">3:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--4:00 - 4:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">4:00</span>
-          <div class="timeContent"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">4:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--5:00 - 5:30-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">5:00</span>
-          <div class="timeContent"></div>
-        </div>
-        <div class="secondhalf d-flex">
-          <span class="time">5:30</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--6:00-->
-      <div class="TimeSection">
-        <div class="firsthalf d-flex">
-          <span class="time">6:00</span>
-          <div class="timeContent"></div>
-        </div>
-      </div>
-      <!--End-->
     </div>
-  </body>
+    <!--10:00 - 10:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">10:00</span>
+        <div class="timeContent"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">10:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--11:00 - 11:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">11:00</span>
+        <div class="timeContent contentActive">Have lunch with John</div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">11:30</span>
+        <div class="timeContent contentActive"></div>
+      </div>
+    </div>
+    <!--12:00 - 12:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">12:00</span>
+        <div class="timeContent contentActive"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">12:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--1:00 - 1:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">1:00</span>
+        <div class="timeContent"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">1:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--2:00 - 2:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">2:00</span>
+        <div class="timeContent w-50">
+          <div class=" withDesigner  h-33"></div>
+          <div class=" withDesigner contentActive h-66">Follow up with Designer</div>
+        </div>
+        <div class="timeContent ms-0 w-50">
+          <div class=" contentActive skypeCall h-100">skype call</div>
+        </div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">2:30</span>
+        <div class="timeContent w-50">
+          <div class=" contentActive h-83"></div>
+        </div>
+        <div class="timeContent ms-0 w-50">
+          <div class="  h-33"></div>
+          <div class=" contentActive pushup h-66">Push up branch</div>
+        </div>
+      </div>
+    </div>
+    <!--3:00 - 3:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">3:00</span>
+        <div class="timeContent withDesigner w-50"></div>
+        <div class="timeContent contentActive ms-0 w-50 branchBalance"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">3:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--4:00 - 4:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">4:00</span>
+        <div class="timeContent"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">4:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--5:00 - 5:30-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">5:00</span>
+        <div class="timeContent"></div>
+      </div>
+      <div class="secondhalf d-flex">
+        <span class="time">5:30</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--6:00-->
+    <div class="TimeSection">
+      <div class="firsthalf d-flex">
+        <span class="time">6:00</span>
+        <div class="timeContent"></div>
+      </div>
+    </div>
+    <!--End-->
+  </div>
+  <script src="js/jq.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
 </html>

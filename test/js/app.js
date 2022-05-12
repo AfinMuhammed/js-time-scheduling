@@ -48,7 +48,7 @@ var min = (a+i*30) % 60;
 // var duration= ( i==0 ) ? 0 : data[i--].duration;
 // console.log(b + ":" + c);
   $(".main").append(`<div class="TimeSection">
-  <div class=" d-flex">
+  <div class="firsthalf d-flex">
     <span class="time">${hour + ":" + min}</span>
     <div class="timeContent">
       <div class=" contentActive" style="height:${data[i].duration}px;margin-top:${data[i].start}px;">

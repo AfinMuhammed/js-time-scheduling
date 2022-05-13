@@ -199,3 +199,29 @@ $(".main").append(`<div class="TimeSection">
 //     $('.secondhalf').find('.timeContent').addClass('d-flex');
 //   }
 // }
+
+
+
+//13.05.2022 - 10:47
+for (i = 0; i < data.length; i++) {
+  // if (i + 1 == (data.length - 1) && data[data.length - 1].overlapped) {
+  //   // console.log("aaa");
+  //   var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;">${data[i].title}</div>`;
+  //   $('.firsthalf').find('.timeContent').append(addTask);
+
+  // } else {
+    var currentEventDuration = (data[i].duration) * 2 + 'px';
+    var nexteventStart = data[i + 1].start;
+    var currentEventTop = ((data[i].start) * 2) + 60;
+    // console.log("hello:  " + (nexteventStart - (data[i].start + data[i].duration)));
+    var isOverlapping = nexteventStart - (data[i].start + data[i].duration);
+    if (isOverlapping < 0) {
+      data[i + 1].overlapped = true;
+      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:660px">${data[i].title}</div>`;
+    } else
+      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:900px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
+    if (data[i].overlapped)
+      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
+    $('.firsthalf').find('.timeContent').append(addTask);
+  // }
+}

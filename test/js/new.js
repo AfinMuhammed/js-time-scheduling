@@ -34,26 +34,11 @@ var data = [{
   start: 400,
   duration: 30,
   title: "Push up branch"
+}, {
+  start: 430,
+  duration: 10,
+  title: "commented"
 }];
-
-
-// console.log(data[0].title);
-var firststart = 60 * 8;
-var secondstart = 63.75 * 8;
-// var i = 0;
-for (var i = 0; i < 10; i++) {
-// console.log(data[i].start + 60 * 8);
-var eight = 8;
-
-var hour = Math.floor((firststart + i * 60) / 60);
-var min = (firststart + i * 60) % 60;
-
-var hour1 = Math.floor((secondstart + i * 60) / 60);
-var min1 = (secondstart + i * 60) % 60;
-
-$('.firsthalf').append(`<span class="time" style="left:120px">${hour+':'+min}0</span>`);
-console.log('aaaa:'+hour);
-}
 
 $(".main").append(`<div class="TimeSection">
 <div class="firsthalf d-flex">
@@ -64,26 +49,45 @@ $(".main").append(`<div class="TimeSection">
 </div>
 </div>`)
 
+
+var firststart = 60 * 8;
+var secondstart = 63.75 * 8;
+for (var i = 0; i < 10; i++) {
+  var currentTimeTopHour = (i * 120) + 60;
+  var currentTimeTopMin = (i * 120) + 120;
+  var hour = Math.floor((firststart + i * 60) / 60);
+  if(hour>12)
+    var hour = ((hour + 11) % 12 + 1);
+  var min = (firststart + i * 60) % 60;
+  var currentHrTagTop = (i * 120) + 45;
+  var hour1 = Math.floor((secondstart + i * 60) / 60);
+  if(hour1>12)
+    var hour1 = ((hour1 + 11) % 12 + 1);
+  var min1 = (secondstart + i * 60) % 60;
+  $('.TimeSection').append(`<hr style="top:${currentHrTagTop}px">`);
+  $('.firsthalf').append(`<span class="time" style="left:120px;top:${currentTimeTopHour}px">${hour+':'+min}0</span>`);
+  $('.firsthalf').append(`<span class="time" style="left:120px;top:${currentTimeTopMin}px">${hour1+':'+min1}</span>`);
+}
+
 for (i = 0; i < data.length; i++) {
-  if (i+1==(data.length-1) && data[data.length - 1].overlapped) {
-    // console.log("aaa");
-    var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;">${data[i].title}</div>`;
-    $('.firsthalf').find('.timeContent').append(addTask);
-
-  } else {
-    var currentEventDuration = (data[i].duration) * 2 + 'px';
-    var nexteventStart = data[i + 1].start;
-    var currentEventTop = ((data[i].start) * 2) + 60;
-    console.log("hello:  " + (nexteventStart - (data[i].start + data[i].duration)));
-    var isOverlapping = nexteventStart - (data[i].start + data[i].duration);
-    if (isOverlapping < 0) {
-      data[i + 1].overlapped = true;
-
-      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:660px">${data[i].title}</div>`;
-    } else
-      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:900px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
-    if (data[i].overlapped)
-      var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
-    $('.firsthalf').find('.timeContent').append(addTask);
-  }
+  // for (j = 0; j < data.length - 1; j++) {
+  //   if (j == i) {
+  //     continue;
+  //   } 
+  //  else {}
+  // }
+      // var nexteventStart = data[j].start;
+      var currentEventDuration = (data[i].duration) * 2 + 'px';
+      var nexteventStart = data[i+1].start;
+      var currentEventTop = ((data[i].start) * 2) + 60;
+      var isOverlapping = nexteventStart - (data[i].start + data[i].duration);
+      if (isOverlapping < 0) {
+        data[i+1].overlapped = true;
+        var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:660px">${data[i].title}</div>`;
+      } else
+        var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:900px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
+      if (data[i].overlapped)
+        var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:450px;top:${currentEventTop}px;left:210px">${data[i].title}</div>`;
+      $('.firsthalf').find('.timeContent').append(addTask);
+    
 }

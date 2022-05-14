@@ -36,7 +36,8 @@ hr{
 }
 .timeContent{
   width: 100%;
-  margin-left: 15px;
+  margin-left: 60px;
+  position: relative
 }
 .contentActive{
   background-color: #e1ecf4;

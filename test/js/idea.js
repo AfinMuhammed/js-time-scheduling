@@ -63,22 +63,30 @@ for (var i = 0; i < 10; i++) {
   $('.firsthalf').append(`<span class="time" style="left:120px;top:${currentTimeTopHour}px">${hour+':'+min}0</span>`);
   $('.firsthalf').append(`<span class="time" style="left:120px;top:${currentTimeTopMin}px">${hour1+':'+min1}</span>`);
 }
-
 for (i = 0; i < data.length; i++) {
-  var currentEventDuration = (data[i].duration) * 2 + 'px';
-  var nexteventStart = (data[i + 1]) ? data[i + 1].start : (data[i-1].start + data[i-1].duration);
-  var currentEventTop = ((data[i].start) * 2);
-  var isOverlapping = nexteventStart - (data[i].start + data[i].duration);
-  if (isOverlapping < 0) {
-    if(data[i + 1]) data[i + 1].overlapped = true;
-    var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:46%;top:${currentEventTop}px;left:46%">${data[i].title}</div>`;
-  } else{
-    var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:92%;top:${currentEventTop}px;left:">${data[i].title}</div>`;
+  if (i > 0) {
+    for (var j = 0; j < i; j++) {
+      var currenteventStart = data[i].start;
+      var isOverlapping = currenteventStart - (data[j].start + data[j].duration);
+      if (isOverlapping < 0) {
+        data[i].overlapped = 'left';
+        if (data[j].overlapped == 'left') {
+          data[i].overlapped = true;
+          break;
+        }
+        data[j].overlapped = true;
+      }
+    }
   }
-  //if (data[i].overlapped && !data[i].isPloated)  
-  if (data[i].overlapped && data[i+1])
+}
+for (i = 0; i < data.length; i++) {
+  var currentEventTop = ((data[i].start) * 2);
+  var currentEventDuration = (data[i].duration) * 2 + 'px';
+  if (data[i].overlapped == true) {
+    var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:46%;top:${currentEventTop}px;left:46%">${data[i].title}</div>`;
+  } else if (data[i].overlapped == 'left') {
     var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:46%;top:${currentEventTop}px;left:">${data[i].title}</div>`;
+  } else
+    var addTask = `<div class=" contentActive " style="height:${currentEventDuration};width:92%;top:${currentEventTop}px;left:">${data[i].title}</div>`;
   $('.firsthalf').find('.timeContent').append(addTask);
-  data[i].isPloated=true;
-
 }
